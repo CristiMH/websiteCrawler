@@ -10,12 +10,12 @@ load_dotenv()
 embedder = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2')
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
-pc.create_index(
-    name="uiprime",
-    dimension=512,
-    metric="cosine",
-    spec=ServerlessSpec(cloud="aws", region="us-east-1")
-)
+# pc.create_index(
+#     name="uiprime",
+#     dimension=512,
+#     metric="cosine",
+#     spec=ServerlessSpec(cloud="aws", region="us-east-1")
+# )
 
 index = pc.Index(os.getenv("PINECONE_INDEX"))
 
